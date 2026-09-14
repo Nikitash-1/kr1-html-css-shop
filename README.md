@@ -25,6 +25,10 @@
 - Git;
 - GitHub.
 
+## Ссылка на опубликованный проект
+
+GitHub Pages: https://nikitash-1.github.io/kr1-html-css-shop/
+
 ## Автор
 
 ФИО: Шелухин Никита Юрьевич 
