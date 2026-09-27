@@ -24,8 +24,8 @@
 - HTML;
 - CSS;
 - Git;
-- GitHub.
-- JavaScript
+- GitHub;
+- JavaScript.
 
 ## Ссылка на опубликованный проект
 
