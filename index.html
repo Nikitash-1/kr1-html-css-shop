@@ -8,10 +8,8 @@
   <title>SemenA.ru - Интернет-магазин семян</title>
   <link rel="stylesheet" href="css/style.css">
   <script src="js/main.js" defer></script>
-
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Интернет-магазин семян SemenA">
-  <meta property="og:description" content="SemenA.ru">
+  <meta property="og:title" content="Интернет-магазин семян">
   <meta property="og:image" content="https://nikitash-1.github.io/kr1-html-css-shop/images/preview.jpg">
 </head>
 
@@ -19,21 +17,12 @@
   <header class="site-header">
     <div class="site-header__inner">
       <a class="site-header__logo" href="index.html">SemenA.ru</a>
-
       <nav class="site-nav" aria-label="Основная навигация">
         <ul class="site-nav__list">
-          <li class="site-nav__item">
-            <a class="site-nav__link site-nav__link--active" href="index.html">Главная</a>
-          </li>
-          <li class="site-nav__item">
-            <a class="site-nav__link" href="catalog.html">Каталог</a>
-          </li>
-          <li class="site-nav__item">
-            <a class="site-nav__link" href="contacts.html">Контакты</a>
-          </li>
-          <li class="site-nav__item">
-            <a class="site-nav__link" href="index.html#popular">Популярные товары</a>
-          </li>
+          <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" href="index.html">Главная</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="catalog.html">Каталог</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="order.html">Заказ</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="contacts.html">Контакты</a></li>
         </ul>
       </nav>
     </div>
@@ -42,10 +31,7 @@
   <main>
     <section class="hero">
       <h1>Интернет-магазин семян SemenA.ru</h1>
-      <p>
-        Добро пожаловать.
-        Это главная страница интернет-магазина.
-      </p>
+      <p>Добро пожаловать. Это главная страница интернет-магазина.</p>
       <a class="button" href="#popular">Перейти к товарам</a>
     </section>
 
@@ -55,81 +41,69 @@
         <li>большой выбор товаров;</li>
         <li>быстрая доставка по всей Солнечной системе;</li>
         <li>частые скидки и распродажи;</li>
-        <li>психологическая поддержка;</li>
+        <li>человеческая поддержка;</li>
       </ul>
     </section>
 
     <section class="section" id="popular">
       <h2>Популярные товары</h2>
-
       <div class="products-grid">
         <article class="product-card">
+          <span class="product-card__badge">Хит</span>
           <img class="product-card__image" src="images/seed1.jpg" alt="Товар 1" loading="lazy">
-          <h3 class="product-card__title">Товар 1</h3>
+          <h3 class="product-card__title">
+            <a class="product-card__link" href="product.html">Товар 1</a>
+          </h3>
           <p class="product-card__description">Свекла жёлтая.</p>
           <p class="product-card__price">Цена: 1000 руб.</p>
-          <button class="button product-card__button" type="button" data-product="Товар 1">
-            Заказать
-          </button>
+          <button class="button product-card__button" type="button" data-product="Товар 1">Заказать</button>
         </article>
 
         <article class="product-card">
           <img class="product-card__image" src="images/seed2.jpg" alt="Товар 2" loading="lazy">
-          <h3 class="product-card__title">Товар 2</h3>
+          <h3 class="product-card__title"><a class="product-card__link" href="product.html">Товар 2</a></h3>
           <p class="product-card__description">Свекла цилиндр.</p>
           <p class="product-card__price">Цена: 1500 руб.</p>
-          <button class="button product-card__button" type="button" data-product="Товар 2">
-            Заказать
-          </button>
+          <button class="button product-card__button" type="button" data-product="Товар 2">Заказать</button>
         </article>
 
         <article class="product-card">
           <img class="product-card__image" src="images/seed3.jpg" alt="Товар 3" loading="lazy">
-          <h3 class="product-card__title">Товар 3</h3>
+          <h3 class="product-card__title"><a class="product-card__link" href="product.html">Товар 3</a></h3>
           <p class="product-card__description">Свекла ванильная.</p>
           <p class="product-card__price">Цена: 2000 руб.</p>
-          <button class="button product-card__button" type="button" data-product="Товар 3">
-            Заказать
-          </button>
+          <button class="button product-card__button" type="button" data-product="Товар 3">Заказать</button>
         </article>
 
         <article class="product-card">
           <img class="product-card__image" src="images/seed4.jpg" alt="Товар 4" loading="lazy">
-          <h3 class="product-card__title">Товар 4</h3>
+          <h3 class="product-card__title"><a class="product-card__link" href="product.html">Товар 4</a></h3>
           <p class="product-card__description">Кохин Нефрит.</p>
           <p class="product-card__price">Цена: 2500 руб.</p>
-          <button class="button product-card__button" type="button" data-product="Товар 4">
-            Заказать
-          </button>
+          <button class="button product-card__button" type="button" data-product="Товар 4">Заказать</button>
         </article>
 
         <article class="product-card">
           <img class="product-card__image" src="images/seed5.jpg" alt="Товар 5" loading="lazy">
-          <h3 class="product-card__title">Товар 5</h3>
+          <h3 class="product-card__title"><a class="product-card__link" href="product.html">Товар 5</a></h3>
           <p class="product-card__description">Эшшольция Мираж.</p>
           <p class="product-card__price">Цена: 3000 руб.</p>
-          <button class="button product-card__button" type="button" data-product="Товар 5">
-            Заказать
-          </button>
+          <button class="button product-card__button" type="button" data-product="Товар 5">Заказать</button>
         </article>
 
         <article class="product-card">
           <img class="product-card__image" src="images/seed6.jpg" alt="Товар 6" loading="lazy">
-          <h3 class="product-card__title">Товар 6</h3>
+          <h3 class="product-card__title"><a class="product-card__link" href="product.html">Товар 6</a></h3>
           <p class="product-card__description">Дайкон Алмаз.</p>
           <p class="product-card__price">Цена: 3500 руб.</p>
-          <button class="button product-card__button" type="button" data-product="Товар 6">
-            Заказать
-          </button>
+          <button class="button product-card__button" type="button" data-product="Товар 6">Заказать</button>
         </article>
       </div>
     </section>
 
     <aside class="aside-info">
       <h2>Информация для покупателей</h2>
-      <p>
-        На следующих выходных РАСПРОДАЖААААААААААААААААААААААААААААААААААААААААААААА!!!!!
-      </p>
+      <p>На следующих практических занятиях этот проект будет расширяться: появятся формы, модальное окно, дополнительные страницы, Flex/Grid, БЭМ-структура и адаптивная версия сайта.</p>
     </aside>
   </main>
 
@@ -138,80 +112,40 @@
     <p>Дисциплина: Фронтенд и бэкенд разработка</p>
   </footer>
 
+  <a href="#" class="button button--up" title="Наверх">↑ Наверх</a>
+
   <dialog class="order-dialog" id="order-dialog" aria-labelledby="order-dialog-title">
     <h2 id="order-dialog-title">Оформление заявки</h2>
-
     <form class="order-form" id="order-form" action="#" method="post" novalidate>
-      
-      <!-- Скрытое поле для приема названия товара из JS -->
       <input type="hidden" id="selected-product" name="product">
-
       <div class="order-form__field">
         <label class="order-form__label" for="order-name">Имя</label>
         <input class="order-form__input" id="order-name" name="name" type="text" required>
       </div>
-
       <div class="order-form__field">
         <label class="order-form__label" for="order-email">E-mail</label>
         <input class="order-form__input" id="order-email" name="email" type="email" required>
       </div>
-
       <div class="order-form__field">
         <label class="order-form__label" for="order-phone">Телефон</label>
-        <input
-          class="order-form__input"
-          id="order-phone"
-          name="phone"
-          type="tel"
-          inputmode="tel"
-          placeholder="+7 (900) 000-00-00"
-          pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$"
-          required
-        >
-        <small>Формат: +7 (900) 000-00-00</small>
+        <input class="order-form__input" id="order-phone" name="phone" type="tel" inputmode="tel" placeholder="+7 (900) 000-00-00" pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$" required>
       </div>
-
-      <div class="order-form__field">
-        <label class="order-form__label" for="order-date">Дата связи</label>
-        <input class="order-form__input" id="order-date" name="date" type="date">
-      </div>
-
       <div class="order-form__field">
         <label class="order-form__label" for="order-topic">Тема заявки</label>
         <select class="order-form__select" id="order-topic" name="topic" required>
           <option value="">Выберите тему</option>
           <option value="product">Заказ товара</option>
-          <option value="consulation">Консультация</option>
-          <option value="delivery">Доставка</option>
         </select>
       </div>
-
-      <div class="order-form__field">
-        <label class="order-form__label" for="order-comment">Комментарий</label>
-        <textarea class="order-form__textarea" id="order-coment" name="comment" rows="4" placeholder="Укажите дополнительную информацию"></textarea>
-      </div>
-
       <div class="order-form__field order-form__field--checkbox">
-        <label>
-          <input id="order-agreement" name="agreement" type="checkbox" required>
-          Я согласен на обработку данных
-        </label>
+        <label><input id="order-agreement" name="agreement" type="checkbox" required> Я согласен на обработку данных</label>
       </div>
-
       <div class="order-form__actions">
-        <button class="button button--secondary" type="button" id="close-order-dialog">
-          Закрыть
-        </button>
-        <button class="button button--primary" type="submit">
-          Отправить заявку
-        </button>
+        <button class="button button--secondary" type="button" id="close-order-dialog">Закрыть</button>
+        <button class="button button--primary" type="submit">Отправить заявку</button>
       </div>
     </form>
   </dialog>
-
-  <p class="success-message" id="success-message" hidden>
-    Форма успешно отправлена!
-  </p>
+  <p class="success-message" id="success-message" hidden>Форма успешно отправлена!</p>
 </body>
-
 </html>
