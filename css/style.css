@@ -29,6 +29,7 @@
   --font-size-sm: 14px;
   --font-size-xs: 12px;
   --font-size-logo: 40px;
+  --font-size-h1: 32px;
   --font-weight-normal: 400;
   --font-weight-bold: 700;
 
@@ -69,6 +70,7 @@
   /* --- Сетки (Grid) --- */
   --grid-columns-products: repeat(3, 1fr);
   --grid-columns-catalog: var(--size-filter-width) 1fr;
+  --grid-columns-product-page: 1fr 1fr;
 
   /* --- Тени (Shadows) --- */
   --shadow-dialog: 0 4px 15px var(--color-shadow-light);
@@ -498,7 +500,61 @@ a:focus-visible {
 
 
 /* ==========================================================================
-   13. ПОЗИЦИОНИРОВАНИЕ И УТИЛИТЫ
+   13. СТРАНИЦА ТОВАРА И ТАБЛИЦА
+   ========================================================================== */
+
+.product-page__layout {
+  display: grid;
+  grid-template-columns: var(--grid-columns-product-page);
+  gap: var(--space-xl);
+  margin-top: var(--space-lg);
+}
+
+.product-page__img {
+  width: var(--size-full);
+  border-radius: var(--radius-md);
+  border: var(--border-width-medium) solid var(--color-border);
+}
+
+.product-page__price {
+  font-size: var(--font-size-h1);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary-dark);
+  margin-top: var(--space-none);
+}
+
+/* Стили для красивой таблицы */
+.product-table {
+  width: var(--size-full);
+  border-collapse: collapse;
+  margin-top: var(--space-lg);
+  margin-bottom: var(--space-lg);
+  background-color: var(--color-bg);
+}
+
+.product-table caption {
+  text-align: left;
+  font-size: var(--font-size-h1);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--space-sm);
+  color: var(--color-text);
+}
+
+.product-table th,
+.product-table td {
+  border: var(--border-width-thin) solid var(--color-border);
+  padding: var(--space-sm) var(--space-md);
+  text-align: left;
+}
+
+.product-table th {
+  background-color: var(--color-surface);
+  font-weight: var(--font-weight-bold);
+}
+
+
+/* ==========================================================================
+   14. ПОЗИЦИОНИРОВАНИЕ И УТИЛИТЫ
    ========================================================================== */
 
 .success-message {
