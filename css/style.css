@@ -1,59 +1,105 @@
-/* ===============================
-   1. Переменные проекта и правила
-   =============================== */
-
-/* Правила */
-html {
-  scroll-behavior: smooth;
-}
+/* ==========================================================================
+   1. ПЕРЕМЕННЫЕ ПРОЕКТА
+   ========================================================================== */
 
 :root {
-  /* Основные цвета проекта */
+  /* --- Основные цвета --- */
   --color-bg: #ffffff;
   --color-text: #222222;
   --color-muted: #666666;
-  --color-primary: #0057b8;
-  --color-primary-dark: #003f86;
-  --color-border: #dddddd;
-  --color-surface: #f7f7f7;
-  --color-surface-accent: #eef5ff;
+  --color-primary: #2f9c4a;
+  --color-primary-dark: #1d6c34;
+  --color-border: #d6e8bf;
+  --color-surface: #d4e0c6;
+  --color-surface-accent: #224629;
   --color-danger: #b00020;
-  --color-success: #168a2f;
+  --color-success: #179c22;
   --color-success-bg: #eefaf0;
   --color-white: #ffffff;
 
-  /* Отступы */
+  /* --- Цвета теней и прозрачности --- */
+  --color-shadow-light: rgba(0, 0, 0, 0.2);
+  --color-shadow-medium: rgba(0, 0, 0, 0.3);
+  --color-overlay: rgba(0, 0, 0, 0.5);
+
+  /* --- Шрифты --- */
+  --font-family: Arial, sans-serif;
+  --line-height: 1.5;
+  --font-size-base: 16px;
+  --font-size-sm: 14px;
+  --font-size-xs: 12px;
+  --font-size-logo: 40px;
+  --font-weight-normal: 400;
+  --font-weight-bold: 700;
+
+  /* --- Отступы (Spacing) --- */
+  --space-none: 0;
   --space-xs: 4px;
   --space-sm: 8px;
   --space-md: 16px;
   --space-lg: 24px;
   --space-xl: 32px;
 
-  /* Скругления */
+  /* --- Размеры --- */
+  --size-full: 100%;
+  --size-container-width: 1100px;
+  --size-image-height: 200px;
+  --size-filter-width: 260px;
+  
+  /* Позиционирование элементов */
+  --pos-badge-top: 10px;
+  --pos-badge-right: 10px;
+  --pos-btn-up-bottom: 20px;
+  --pos-btn-up-right: 20px;
+  --padding-form-input: 10px 12px;
+
+  /* --- Скругления (Border Radius) --- */
   --radius-sm: 6px;
   --radius-md: 8px;
   --radius-lg: 12px;
 
-  /* Размеры */
-  --container-width: 1100px;
+  /* --- Рамки и контуры (Borders & Outlines) --- */
+  --border-width-thin: 1px;
+  --border-width-medium: 2px;
+  --border-width-thick: 4px;
+  --outline-width: 2px;
+  --outline-offset-sm: 3px;
+  --outline-offset-md: 4px;
+
+  /* --- Сетки (Grid) --- */
+  --grid-columns-products: repeat(3, 1fr);
+  --grid-columns-catalog: var(--size-filter-width) 1fr;
+
+  /* --- Тени (Shadows) --- */
+  --shadow-dialog: 0 4px 15px var(--color-shadow-light);
+  --shadow-btn-up: 0 4px 10px var(--color-shadow-medium);
+
+  /* --- Z-Index --- */
+  --z-index-badge: 10;
+  --z-index-btn-up: 100;
+
+  /* --- Прозрачность (Opacity) --- */
+  --opacity-disabled: 0.6;
 }
 
-:target {
-  outline: 2px dashed var(--color-primary);
-  outline-offset: 4px;
+
+/* ==========================================================================
+   2. БАЗОВЫЕ СТИЛИ ДОКУМЕНТА
+   ========================================================================== */
+
+html {
+  scroll-behavior: smooth;
 }
 
-/* ===============================
-   2. Базовые стили
-   =============================== */
 * {
   box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  line-height: 1.5;
+  margin: var(--space-none);
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height);
   color: var(--color-text);
   background-color: var(--color-bg);
 }
@@ -64,70 +110,22 @@ footer {
   padding: var(--space-lg);
 }
 
-header {
-  background-color: var(--color-surface);
-}
-
 footer {
   background-color: var(--color-surface);
 }
 
-/* ===============================
-   3. Общие элементы интерфейса
-   =============================== */
+:target {
+  outline: var(--border-width-medium) dashed var(--color-primary);
+  outline-offset: var(--outline-offset-md);
+}
+
+
+/* ==========================================================================
+   3. ОБЩИЕ ЭЛЕМЕНТЫ ИНТЕРФЕЙСА (a, button)
+   ========================================================================== */
 
 a {
   color: var(--color-primary);
-}
-
-.site-header {
-  background-color: var(--color-surface);
-}
-
-.site-header__inner {
-  max-width: var(--container-width);
-  margin: 0 auto;
-  padding: var(--space-lg);
-}
-
-.site-header__logo {
-  font-weight: 700;
-  color: var(--color-text);
-  text-decoration: none;
-}
-
-.site-nav__list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: var(--space-md);
-  padding: 0;
-  margin: var(--space-md) 0 0;
-  list-style: none;
-}
-
-.site-nav__link {
-  display: inline-block;
-  padding: var(--space-sm) var(--space-md);
-  color: var(--color-primary);
-  text-decoration: none;
-  border-radius: var(--radius-sm);
-}
-
-.site-nav__link:hover {
-  color: var(--color-white);
-  background-color: var(--color-primary);
-}
-
-.site-nav__link:focus-visible {
-  outline: 2px solid var(--color-primary);
-  outline-offset: 3px;
-}
-
-.site-nav__link--active {
-  color: var(--color-white);
-  background-color: var(--color-primary);
 }
 
 a:hover {
@@ -135,8 +133,8 @@ a:hover {
 }
 
 a:focus-visible {
-  outline: 2px solid var(--color-primary);
-  outline-offset: 3px;
+  outline: var(--outline-width) solid var(--color-primary);
+  outline-offset: var(--outline-offset-sm);
 }
 
 .button {
@@ -155,26 +153,38 @@ a:focus-visible {
 }
 
 .button:focus-visible {
-  outline: 2px solid var(--color-primary);
-  outline-offset: 3px;
+  outline: var(--outline-width) solid var(--color-primary);
+  outline-offset: var(--outline-offset-sm);
 }
 
 .button:disabled {
-  opacity: 0.6;
+  opacity: var(--opacity-disabled);
   cursor: not-allowed;
 }
 
-/* ===============================
-   4. Компоненты страницы
-   =============================== */
 
-.hero {
-  max-width: var(--container-width);
-  margin: 0 auto var(--space-xl);
-  padding: var(--space-xl) var(--space-lg);
-  background-color: var(--color-surface-accent);
-  border-radius: var(--radius-lg);
+/* ==========================================================================
+   4. ШАПКА САЙТА (site-header, site-nav)
+   ========================================================================== */
+
+.site-header {
+  background-color: var(--color-surface);
 }
+
+.site-header__inner {
+  max-width: var(--size-container-width);
+  margin: var(--space-none) auto;
+  padding: var(--space-lg);
+}
+
+.site-header__logo {
+  font-size: var(--font-size-logo);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+/* --- Навигация --- */
 
 .site-nav__list {
   display: flex;
@@ -182,12 +192,12 @@ a:focus-visible {
   justify-content: center;
   align-items: center;
   gap: var(--space-md);
-  padding: 0;
-  margin: var(--space-md) 0 0;
+  padding: var(--space-none);
+  margin: var(--space-md) var(--space-none) var(--space-none);
   list-style: none;
 }
 
-.site-nav__list a {
+.site-nav__link {
   display: inline-block;
   padding: var(--space-sm) var(--space-md);
   color: var(--color-primary);
@@ -195,32 +205,69 @@ a:focus-visible {
   border-radius: var(--radius-sm);
 }
 
-.site-nav__list a:hover {
+.site-nav__link:hover {
   color: var(--color-white);
   background-color: var(--color-primary);
 }
 
+.site-nav__link:focus-visible {
+  outline: var(--outline-width) solid var(--color-primary);
+  outline-offset: var(--outline-offset-sm);
+}
+
+.site-nav__link--active {
+  color: var(--color-white);
+  background-color: var(--color-primary);
+}
+
+
+/* ==========================================================================
+   5. HERO-БЛОК
+   ========================================================================== */
+
+.hero {
+  max-width: var(--size-container-width);
+  margin: var(--space-none) auto var(--space-xl);
+  padding: var(--space-xl) var(--space-lg);
+  background-color: var(--color-surface-accent);
+  border-radius: var(--radius-lg);
+  color: var(--color-white);
+}
+
+
+/* ==========================================================================
+   6. СЕКЦИИ
+   ========================================================================== */
+
 .section {
-  max-width: var(--container-width);
-  margin: 0 auto var(--space-xl);
+  max-width: var(--size-container-width);
+  margin: var(--space-none) auto var(--space-xl);
 }
 
 .section h2 {
-  margin-top: 0;
+  margin-top: var(--space-none);
 }
+
+
+/* ==========================================================================
+   7. СЕТКА ТОВАРОВ И КАРТОЧКА (products-grid, product-card)
+   ========================================================================== */
 
 .products-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: var(--grid-columns-products);
   gap: var(--space-lg);
 }
 
+/* --- Карточка товара --- */
+
 .product-card {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: var(--space-sm);
   padding: var(--space-md);
-  border: 1px solid var(--color-border);
+  border: var(--border-width-medium) solid var(--color-border);
   border-radius: var(--radius-md);
   background-color: var(--color-bg);
 }
@@ -228,6 +275,64 @@ a:focus-visible {
 .product-card:hover {
   border-color: var(--color-primary);
 }
+
+.product-card h3 {
+  margin-top: var(--space-none);
+}
+
+.product-card__badge {
+  position: absolute;
+  top: var(--pos-badge-top);
+  right: var(--pos-badge-right);
+  padding: var(--space-xs) var(--space-sm);
+  color: var(--color-white);
+  background-color: var(--color-danger);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  z-index: var(--z-index-badge);
+}
+
+.product-card__image {
+  display: block;
+  width: var(--size-full);
+  height: var(--size-image-height);
+  object-fit: contain;
+  background-color: var(--color-surface);
+  border-radius: var(--radius-sm);
+}
+
+.product-card__title {
+  margin: var(--space-none);
+  color: var(--color-text);
+}
+
+.product-card__link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.product-card__link:hover {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+.product-card__description {
+  margin: var(--space-none);
+  color: var(--color-muted);
+}
+
+.product-card__price {
+  margin: var(--space-none);
+  font-weight: var(--font-weight-bold);
+}
+
+.product-card__button {
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+/* --- Модификаторы карточки --- */
 
 .product-card--featured {
   border-color: var(--color-primary);
@@ -237,52 +342,54 @@ a:focus-visible {
   border-color: var(--color-danger);
 }
 
-.product-card__title {
-  margin: 0;
-  color: var(--color-text);
-}
-
-.product-card__description {
-  margin: 0;
-  color: var(--color-muted);
-}
-
-.product-card__price {
-  margin: 0;
-  font-weight: 700;
-}
-
 .product-card--discount .product-card__price {
   color: var(--color-danger);
 }
 
-.product-card__button {
-  margin-top: auto;
-  align-self: flex-start;
-}
 
-
-.product-card:hover {
-  border-color: var(--color-primary);
-}
-
-.product-card h3 {
-  margin-top: 0;
-}
+/* ==========================================================================
+   8. БОКОВАЯ ВСТАВКА (aside-info)
+   ========================================================================== */
 
 .aside-info {
-  max-width: var(--container-width);
-  margin: 0 auto var(--space-xl);
+  max-width: var(--size-container-width);
+  margin: var(--space-none) auto var(--space-xl);
   padding: var(--space-md);
-  border-left: 4px solid var(--color-primary);
+  border-left: var(--border-width-thick) solid var(--color-primary);
   background-color: var(--color-surface);
 }
 
+
+/* ==========================================================================
+   9. ХЛЕБНЫЕ КРОШКИ (breadcrumbs)
+   ========================================================================== */
+
+.breadcrumbs {
+  max-width: var(--size-container-width);
+  margin: var(--space-none) auto var(--space-md);
+  font-size: var(--font-size-sm);
+  color: var(--color-muted);
+}
+
+.breadcrumbs__link {
+  color: var(--color-primary);
+}
+
+.breadcrumbs__current::before {
+  content: "";
+}
+
+
+/* ==========================================================================
+   10. КАТАЛОГ
+   (catalog-layout, catalog-filters, catalog-products, filters-form)
+   ========================================================================== */
+
 .catalog-layout {
-  max-width: var(--container-width);
-  margin: 0 auto var(--space-xl);
+  max-width: var(--size-container-width);
+  margin: var(--space-none) auto var(--space-xl);
   display: grid;
-  grid-template-columns: 260px 1fr;
+  grid-template-columns: var(--grid-columns-catalog);
   grid-template-areas: "filters products";
   gap: var(--space-lg);
 }
@@ -290,7 +397,7 @@ a:focus-visible {
 .catalog-filters {
   grid-area: filters;
   padding: var(--space-md);
-  border: 1px solid var(--color-border);
+  border: var(--border-width-thin) solid var(--color-border);
   border-radius: var(--radius-md);
   background-color: var(--color-surface);
 }
@@ -299,20 +406,22 @@ a:focus-visible {
   grid-area: products;
 }
 
+/* --- Форма фильтров --- */
+
 .filters-form {
   display: grid;
   gap: var(--space-md);
 }
 
 .filters-form fieldset {
-  margin: 0;
+  margin: var(--space-none);
   padding: var(--space-md);
-  border: 1px solid var(--color-border);
+  border: var(--border-width-thin) solid var(--color-border);
   border-radius: var(--radius-sm);
 }
 
 .filters-form legend {
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
 }
 
 .filters-form label {
@@ -321,16 +430,33 @@ a:focus-visible {
 }
 
 .filters-form input[type="number"] {
-  width: 100%;
-  padding: 8px 10px;
-  border: 1px solid var(--color-border);
+  width: var(--size-full);
+  padding: var(--space-sm) var(--padding-form-input); 
+  border: var(--border-width-thin) solid var(--color-border);
   border-radius: var(--radius-sm);
   font: inherit;
 }
 
-/* ===============================
-   5. Форма и модальное окно
-   =============================== */
+
+/* ==========================================================================
+   11. МОДАЛЬНОЕ ОКНО (order-dialog)
+   ========================================================================== */
+
+.order-dialog {
+  padding: var(--space-xl);
+  border: var(--border-width-medium) solid var(--color-primary);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-dialog);
+}
+
+.order-dialog::backdrop {
+  background-color: var(--color-overlay);
+}
+
+
+/* ==========================================================================
+   12. ФОРМА ЗАЯВКИ (order-form)
+   ========================================================================== */
 
 .order-form__field {
   margin-bottom: var(--space-md);
@@ -344,9 +470,9 @@ a:focus-visible {
 .order-form__input,
 .order-form__select,
 .order-form__textarea {
-  width: 100%;
-  padding: 10px 12px;
-  border: 1px solid var(--color-border);
+  width: var(--size-full);
+  padding: var(--padding-form-input);
+  border: var(--border-width-thin) solid var(--color-border);
   border-radius: var(--radius-sm);
   font: inherit;
 }
@@ -360,8 +486,8 @@ a:focus-visible {
 .order-form__input:focus-visible,
 .order-form__select:focus-visible,
 .order-form__textarea:focus-visible {
-  outline: 2px solid var(--color-primary);
-  outline-offset: 3px;
+  outline: var(--outline-width) solid var(--color-primary);
+  outline-offset: var(--outline-offset-sm);
 }
 
 .order-form__actions {
@@ -371,22 +497,27 @@ a:focus-visible {
 }
 
 
-/* ===============================
-   6. Хлебные крошки
-   =============================== */
+/* ==========================================================================
+   13. ПОЗИЦИОНИРОВАНИЕ И УТИЛИТЫ
+   ========================================================================== */
 
-.breadcrumbs {
-  max-width: var(--container-width);
-  margin: 0 auto var(--space-md);
-  font-size: 14px;
-  color: var(--color-muted);
+.success-message {
+  max-width: var(--size-container-width);
+  margin: var(--space-none) auto var(--space-lg);
+  padding: var(--space-md);
+  color: var(--color-success);
+  background-color: var(--color-success-bg);
+  border: var(--border-width-thin) solid var(--color-success);
+  border-radius: var(--radius-sm);
+  text-align: center;
 }
 
-.breadcrumbs__link {
-  color: var(--color-primary);
-}
-
-.breadcrumbs__current::before {
-  content: " / ";
-  color: var(--color-muted);
+/* Фиксированная кнопка "Наверх" */
+.button--up {
+  position: fixed;
+  bottom: var(--pos-btn-up-bottom);
+  right: var(--pos-btn-up-right);
+  z-index: var(--z-index-btn-up);
+  background-color: var(--color-primary-dark);
+  box-shadow: var(--shadow-btn-up);
 }

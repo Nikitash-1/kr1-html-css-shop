@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Оформление заказа - SemenA.ru">
+  <title>Оформление заказа — SemenA.ru</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-header__logo" href="index.html">SemenA.ru</a>
+      <nav class="site-nav" aria-label="Основная навигация">
+        <ul class="site-nav__list">
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html">Главная</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="catalog.html">Каталог</a></li>
+          <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" href="order.html">Заказ</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="contacts.html">Контакты</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <h1>Оформление заказа</h1>
+      <p>Заполните форму ниже, и мы свяжемся с вами для подтверждения заказа.</p>
+      
+      <form class="order-form" action="#" method="post">
+        <div class="order-form__field">
+          <label class="order-form__label" for="order-name-page">Имя</label>
+          <input class="order-form__input" id="order-name-page" name="name" type="text" required>
+        </div>
+        
+        <div class="order-form__field">
+          <label class="order-form__label" for="order-email-page">E-mail</label>
+          <input class="order-form__input" id="order-email-page" name="email" type="email" required>
+        </div>
+
+        <div class="order-form__field">
+          <label class="order-form__label" for="order-phone-page">Телефон</label>
+          <input class="order-form__input" id="order-phone-page" name="phone" type="tel" placeholder="+7 (900) 000-00-00" required>
+        </div>
+
+        <div class="order-form__field order-form__field--checkbox">
+          <label>
+            <input id="order-agreement-page" name="agreement" type="checkbox" required>
+            Я согласен на обработку данных
+          </label>
+        </div>
+
+        <div class="order-form__actions">
+          <button class="button button--primary" type="submit">Отправить заявку</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 SemenA.ru. Все права защищены.</p>
+  </footer>
+
+  <a href="#" class="button button--up" title="Наверх">↑ Наверх</a>
+</body>
+</html>
